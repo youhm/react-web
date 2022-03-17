@@ -1,12 +1,29 @@
+/*
+ * @Description: description
+ * @version: 0.1
+ * @Author: youhuimin
+ * @Date: 2022-03-04 15:44:03
+ * @LastEditors: youhuimin
+ * @LastEditTime: 2022-03-15 16:07:32
+ * @FilePath: \react\my-app\src\index.js
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { store } from './store';
+import { Provider } from 'react-redux';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
